@@ -21,10 +21,10 @@ function App() {
   const [descripcion, setDescripcion] = useState("");
   const [titulo, setTitulo] = useState("");
   const [comentario] = useState("0");
-
+  
 
   const save = () => {
-    fetch(`http://localhost:8080/api/${uuidv4()}/${user.uid}/${uuidv4()}/${descripcion}/${titulo}/${comentario}/${getCurrentDate()}`, { method: 'POST' })
+    fetch(`http://localhost:8080/api/guardar/${uuidv4()}/${user.uid}/${uuidv4()}/${descripcion}/${titulo}/${comentario}/${getCurrentDate()}`, { method: 'POST' })
       .then(response => response.json())
       .then(data => console.log(data));
   }
