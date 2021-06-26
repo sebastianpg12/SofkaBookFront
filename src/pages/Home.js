@@ -35,10 +35,14 @@ export default function Home() {
           {arrayPosts.map((item) => (
             <div key={item.id} class="col-6 text-center">
               <div class="card cardsPosts">
+                <div class="card-header">
+                  <h4 class="card-title">{item.titulo}</h4>
+                </div>
                 <div class="card-body">
+                  <p class="card-text">{item.descripcion} </p>
                   <Link to={`/EditarPost`}>
                     {item.idUsuario === user?.uid ? (
-                      <button
+                      <button type="button" className="buttons btn btn-dark"
                         onClick={() => {
                           saveToLocal("idPost", item.id);
                         }}
@@ -49,7 +53,7 @@ export default function Home() {
                   </Link>
 
                   {item.idUsuario === user?.uid ? (
-                    <button
+                    <button type="button" className="buttons btn btn-dark"
                       onClick={() => {
                         fetch(`http://localhost:8080/api/delete/${item.id}`, {
                           method: "DELETE",
@@ -64,10 +68,8 @@ export default function Home() {
                     </button>
                   ) : null}
 
-                  <h5 class="card-title">{item.titulo}</h5>
-                  <p class="card-text">{item.descripcion} </p>
                   <Link to={`/${item.id}`}>
-                    <button>Abrir Post</button>
+                  <button type="button" className="buttons btn btn-dark">Abrir Post</button>
                   </Link>
                 </div>
               </div>
@@ -75,8 +77,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-
-      
     </div>
   );
 }
