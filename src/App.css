@@ -109,3 +109,7 @@ input[type=submit]:hover {
 .cardsPosts{
   width: 28rem; border: 1px solid #10147ba1;
 }
+
+.btn-exit{
+  width:50px;
+}

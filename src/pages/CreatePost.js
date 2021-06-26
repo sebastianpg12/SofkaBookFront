@@ -1,11 +1,10 @@
-
 import React, { useState, useEffect } from 'react'
 import { auth, signOut } from '../fuctions/firebaseFuctions';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useHistory, Link } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid';
 import {getCurrentDate} from '../fuctions/util'
-
+import MenuHome from '../components/MenuHome';
 import '../App.css';
 
 function App() {
@@ -24,7 +23,7 @@ function App() {
   
 
   const save = () => {
-    fetch(`http://localhost:8080/api/guardar/${uuidv4()}/${user.uid}/${uuidv4()}/${descripcion}/${titulo}/${comentario}/${getCurrentDate()}`, { method: 'POST' })
+    fetch(`http://localhost:8080/api/guardar/${uuidv4()}/${user.uid}/${uuidv4()}/${descripcion}/${titulo}/${getCurrentDate()}`, { method: 'POST' })
       .then(response => response.json())
       .then(data => console.log(data));
   }
@@ -32,17 +31,9 @@ function App() {
 
     <div className="App">
 
-      <nav className="navPrincipal navbar navbar-expand-lg navbar-dark" >
-        <div className="container-fluid">
-          <Link to="/"> <img width="160px" height="30px" src="https://d3j0t7vrtr92dk.cloudfront.net/sofkauniversity/1613419253_SofkaU_Prueba3.png?" /></Link>
-         
-          <div>
+    
+    <MenuHome/>
 
-            <h6 className="namePerson"> {user?.displayName} <img alt="perfil" className="photoProfile" src={user?.photoURL} /></h6>
-          </div>
-
-        </div>
-      </nav>
       <div className="background">
         <div className="container">
           <form className="form">
@@ -60,7 +51,6 @@ function App() {
         </div>
 
       </div>
-      <button className="btnSignOut btn btn-primary" onClick={signOut} >Cerrar Sesión</button>
     </div>
   );
 }
