@@ -18,7 +18,6 @@ export default function Home() {
 
     setArrayPosts(posts);
   };
-
   const history = useHistory();
   const [user] = useAuthState(auth);
   useEffect(() => {
@@ -39,6 +38,7 @@ export default function Home() {
                   <h4 class="card-title">{item.titulo}</h4>
                 </div>
                 <div class="card-body">
+                  
                   <p class="card-text">{item.descripcion} </p>
                   <Link to={`/EditarPost`}>
                     {item.idUsuario === user?.uid ? (

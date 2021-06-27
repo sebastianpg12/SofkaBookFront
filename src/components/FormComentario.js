@@ -18,9 +18,11 @@ export default function FormComentario() {
     
     return(
        <div>
+        <form>
+        <textarea type="text" className="form-control textAreaComment" onChange={(e) => setComentario(e.target.value)} value={comentario} name="comentario" placeholder="Escribe un comentario" />
+           <input  className="buttonComentario" type="submit" value="Enviar" onClick={saveComment} />
+        </form>
            
-           <input type="text" className="form-control" onChange={(e) => setComentario(e.target.value)} value={comentario} name="comentario" placeholder="comentario" />
-           <input type="submit" value="Guardar" onClick={saveComment} />
        </div>
     )
 }

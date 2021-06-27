@@ -4,46 +4,60 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useHistory, Link, useParams } from "react-router-dom";
 import MenuHome from "../components/MenuHome";
 import FormComentario from "../components/FormComentario";
-
+import Comentarios from "../components/Comentarios";
 
 export default function Post() {
   const { id } = useParams();
-  
 
-  const [post, setPost] = React.useState([]);
+  const [post, setPost] = useState([]);
+  const [comentarios, setComentarios] = useState([]);
 
-  React.useEffect(() => {
+  const obtenerComentarios = async () => {
+    const data = await fetch(`http://localhost:8080/api/findComments/${id}`);
+    const comentarios = await data.json();
+    setComentarios(comentarios);
+  };
+
+
+  useEffect(() => {
     const obtenerDatos = async () => {
       const data = await fetch(`http://localhost:8080/api/findPosts/${id}`);
       const posts = await data.json();
-
       setPost(posts);
     };
     obtenerDatos();
+    obtenerComentarios();
+    
   }, [id]);
-
+  console.log(comentarios)
   return (
     <div>
       <MenuHome />
 
-      <div class="card">
+      <div class="card cardPostIndividual">
         <div class="card-header">
-          <h6>{post.titulo}</h6>
+          <h3>{post.titulo}</h3>
         </div>
         <div class="card-body">
-          <h5 class="card-title">
-            {" "}
-            <p>{post.descripcion}</p>
-          </h5>
+        
+            <p class="card-title">{post.descripcion}</p>
+        
 
-          <a href="#" class="btn btn-primary">
-            Go somewhere
-          </a>
+         
         </div>
-
+        <FormComentario />
+        
       </div>
 
-      <FormComentario />
+      <div className="tituloComentarios"><kbd className="kbd">Comentarios</kbd></div>
+
+      {comentarios.map((comentario )=>(
+        <Comentarios key={comentario.id} comentario={comentario}/>
+      ))
+        
+      }
+      
+      
     </div>
   );
 }

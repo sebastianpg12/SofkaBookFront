@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import '../App.css';
 
 import MenuLogin from '../components/MenuLogin';
+import SofkaBook from '../components/sofkabook.png';
 
 
 export default function Login() {
@@ -26,16 +27,16 @@ export default function Login() {
             <div className="card">
 
                 <div className="card-body">
-                    <h5 className="card-title">Bienvenido a SofkaBook</h5>
+                    <div className="card-title"><img  src={SofkaBook} /></div>
                     <br />
-                    <p className="card-text">Estamos construyendo la mejor experiencia de aprendizaje para ti, esperamos disfrutes de los cursos que encontrarás en el Campus de Sofka U.
+                    <p className="card-text">Estamos construyendo la mejor experiencia social para ti, esperamos disfrutes de las distintas utilidades.
                         <br /><br />
                     </p>
 
-                    <p className="desafioContigo">#ElDesafíoEsContigo</p>
+                    <p className="desafioContigo"><strong>#ElDesafíoEsContigo</strong></p>
 
                 </div>
-                <button className="btnGoogle btn btn-primary" onClick={signingWithGoogle} ><img src="https://cdn.icon-icons.com/icons2/836/PNG/512/Google_icon-icons.com_66793.png" width="17px" height="15px"/>Ingresar con Google </button>
+                <button className="btnGoogle btn btn-primary" onClick={signingWithGoogle} ><img src="https://cdn.icon-icons.com/icons2/836/PNG/512/Google_icon-icons.com_66793.png" width="17px" height="15px"/> Ingresar con Google </button>
             </div>
 
 

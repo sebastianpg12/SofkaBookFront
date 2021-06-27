@@ -104,9 +104,6 @@ function EditarPost() {
           </form>
         </div>
       </div>
-      <button className="btnSignOut btn btn-primary" onClick={signOut}>
-        Cerrar Sesión
-      </button>
     </div>
   );
 }

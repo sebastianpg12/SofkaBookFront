@@ -81,9 +81,43 @@ input[type=submit]:hover {
   margin: 0 auto; /* Added */
   float: none; /* Added */
   text-align: center;
+  width:55%;
   margin-bottom: 18px; /* Added */
+  background-color: #050A30;
 }
 
+
+.btnGoogle :hover{
+  
+  background-color: #040722;
+}
+
+.tituloComentarios{
+  margin-top:18px;
+  margin-bottom:-30px;
+  text-align: center;
+  font-size:1.5em;
+ 
+}
+
+.buttonComentario{
+  margin-bottom: 16px;
+}
+.kbd{
+  background-color: #040722;
+}
+.textAreaComment{
+  margin: auto;
+  width:70%;
+  margin-bottom: 12px;
+  margin-top: 12px;
+}
+.cardComments{
+  width:50%;
+}
+.cardPostIndividual{
+  width:75%;
+}
 .photoProfile{
    width:50px;
    height:50px;
@@ -93,14 +127,7 @@ input[type=submit]:hover {
 
 
 
-.btnSignOut {
-  width: 150px;
-  font-size: 1em;
-  position: fixed;
-  right:6px;
-  bottom:5px;
-  background-color:#10137B;
-}
+
 
 .cardsPosts{
   width: 28rem; 
