@@ -1,4 +1,4 @@
-export function getCurrentDate(separator=''){
+export function getCurrentDate(separator='-', point=':', space=' '){
 
     let newDate = new Date()
     let date = newDate.getDate();
@@ -9,5 +9,5 @@ export function getCurrentDate(separator=''){
 
    
 
-    return `${year}${separator}${month<10?`0${month}`:`${month}`}${separator}${date}${hour}${minute}`
+    return `${year}${separator}${month<10?`0${month}`:`${month}`}${separator}${date}${space}${hour}${point}${minute}`
     }

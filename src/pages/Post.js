@@ -37,6 +37,9 @@ export default function Post() {
       <div class="card cardPostIndividual">
         <div class="card-header">
           <h3>{post.titulo}</h3>
+         
+                  <h6><kbd className="kbd">{post.name}</kbd></h6>
+                  <sub><small>{post.fecha}</small></sub>
         </div>
         <div class="card-body">
         

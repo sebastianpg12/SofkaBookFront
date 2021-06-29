@@ -19,11 +19,18 @@ function App() {
 
   const [descripcion, setDescripcion] = useState("");
   const [titulo, setTitulo] = useState("");
-  const [comentario] = useState("0");
+  const [categoria, setCategoria] = useState("");
+  
+var fecha = new Date();
+var options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+
+console.log(
+  fecha.toLocaleDateString("es-ES", options)
+);
   
 
   const save = () => {
-    fetch(`http://localhost:8080/api/guardar/${uuidv4()}/${user.uid}/${uuidv4()}/${descripcion}/${titulo}/${getCurrentDate()}`, { method: 'POST' })
+    fetch(`http://localhost:8080/api/guardar/${uuidv4()}/${user.uid}/${categoria}/${descripcion}/${titulo}/${fecha.toLocaleDateString("es-ES", options)}/${user.displayName}`, { method: 'POST' })
       .then(response => response.json())
       .then(data => console.log(data));
   }
@@ -46,6 +53,16 @@ function App() {
 
               <textarea className="form-control" type="text" onChange={(e) => setDescripcion(e.target.value)} value={descripcion} name="descripcion" placeholder="Descripcion" rows="3"></textarea>
             </div>
+            <label for="categorias">Categoria:</label>
+
+        <select name="categorias" onChange={(e) => setCategoria(e.target.value)} value={categoria}>
+          <option value="o"></option>
+          <option value="Tecnologia">Tecnologia</option>
+          <option value="Agilismo">Agilismo</option>
+          <option value="Q.A">Q.A</option>
+          <option value="Otro">Otro</option>
+        </select>
+<br/>
             <input type="submit" value="Guardar" onClick={save} />
           </form>
         </div>

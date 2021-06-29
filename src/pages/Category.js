@@ -1,58 +1,70 @@
 import React, { useState, useEffect } from "react";
 import { auth, signOut } from "../fuctions/firebaseFuctions";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useHistory, Link } from "react-router-dom";
-import { saveToLocal } from "../fuctions/localstorage";
+import { useHistory, Link, useParams } from "react-router-dom";
 import MenuHome from "../components/MenuHome";
-export default function Home() {
-  const [arrayPosts, setArrayPosts] = React.useState([]);
+import { saveToLocal } from "../fuctions/localstorage";
 
-  React.useEffect(() => {
-    console.log("");
-    obtenerDatos();
-  }, []);
-
-  const obtenerDatos = async () => {
-    const data = await fetch("http://localhost:8080/api/findPosts");
-    const posts = await data.json();
-
-    setArrayPosts(posts);
-  };
-  const history = useHistory();
+export default function Profile() {
   const [user] = useAuthState(auth);
-  useEffect(() => {
-    if (!user) {
-      history.push("/Login");
-    }
-  }, [user, history]);
+  const { id } = useParams();
+
+  const [categoria, setCategoria] = useState([]);
+  const [busqueda, setBusqueda] = useState("");
+
+  const obtenerCategoria = async () => {
+    const data = await fetch(
+      `http://localhost:8080/api/findByCategory/${busqueda}`
+    );
+    const categorias = await data.json();
+    setCategoria(categorias);
+  };
+
+  console.log(categoria);
   return (
     <div>
       <MenuHome />
 
-      
-      <Link className="filtrar" to={`/Category`}>
-             <button type="button " className="buttons btns btn-dark">Filtrar</button>
-             </Link>
-
+      <select
+        className="select"
+        name="categorias"
+        onChange={(e) => setBusqueda(e.target.value)}
+        value={busqueda}
+      >
+        <option value="o"></option>
+        <option value="Tecnologia">Tecnologia</option>
+        <option value="Agilismo">Agilismo</option>
+        <option value="Q.A">Q.A</option>
+        <option value="Otro">Otro</option>
+      </select>
+      <input
+        className="buttons"
+        type="submit"
+        value="Aceptar"
+        onClick={obtenerCategoria}
+      />
 
       <div class="container-xxl">
         <div class="row">
-          {arrayPosts.map((item) => (
+          {categoria.map((item) => (
             <div key={item.id} class="col-6 text-center">
-               
               <div class="card cardsPosts">
                 <div class="card-header">
                   <h4 class="card-title">{item.titulo}</h4>
-                  <h6><kbd className="kbd">{item.name}</kbd></h6>
-                  <sub><small>{item.fecha}</small></sub>
-                  
+                  <h6>
+                    <kbd className="kbd">{item.name}</kbd>
+                  </h6>
+                  <sub>
+                    <small>{item.fecha}</small>
+                  </sub>
                 </div>
                 <div class="card-body">
-                  
                   <p class="card-text">{item.descripcion} </p>
                   <Link to={`/EditarPost`}>
                     {item.idUsuario === user?.uid ? (
-                      <button type="button" className="buttons btns buttonEdit"
+                      <button
+                        type="button"
+                        className="buttons btns buttonEdit"
                         onClick={() => {
                           saveToLocal("idPost", item.id);
                         }}
@@ -63,7 +75,9 @@ export default function Home() {
                   </Link>
 
                   {item.idUsuario === user?.uid ? (
-                    <button type="button" className="buttons btns buttonDelete "
+                    <button
+                      type="button"
+                      className="buttons btns buttonDelete "
                       onClick={() => {
                         fetch(`http://localhost:8080/api/delete/${item.id}`, {
                           method: "DELETE",
@@ -79,7 +93,9 @@ export default function Home() {
                   ) : null}
 
                   <Link to={`/${item.id}`}>
-                  <button type="button" className="buttons btns btn-dark">Abrir Post</button>
+                    <button type="button" className="buttons btns btn-dark">
+                      Abrir Post
+                    </button>
                   </Link>
                 </div>
               </div>

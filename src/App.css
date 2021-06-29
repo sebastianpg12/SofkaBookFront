@@ -30,7 +30,7 @@ font-weight: bold;
 margin: 2%;
 }
 input,
-.btn {
+.btns {
   width: 30%;
   padding: 12px;
   border: none;
@@ -43,6 +43,9 @@ input,
   text-decoration: none; 
 }
 
+.selectCategory{
+  margin: 8px;
+}
 input:hover,
 .btn:hover {
   opacity: 1;
@@ -87,7 +90,7 @@ input[type=submit]:hover {
 }
 
 
-.btnGoogle :hover{
+.btnGoogle:hover{
   
   background-color: #040722;
 }
@@ -125,17 +128,38 @@ input[type=submit]:hover {
    margin-right: 15px;
 }
 
-
-
-
-
 .cardsPosts{
   width: 28rem; 
 }
 .buttons{
   padding: 0 0 0 0 ;
   width: 90px;
+  height: 40px;
   font-size: 15px;
+}
+
+.buttonEdit{
+  background-color: rgb(120, 174, 211);
+  color: white;
+}
+.select{
+  margin: 14px;
+  width: 130px;
+}
+
+.buttonEdit:hover{
+  background-color: rgb(109, 157, 189);
+  color: white;
+}
+
+.buttonDelete{
+  background-color: rgb(247, 127, 111);
+  color: white;
+}
+
+.buttonDelete:hover{
+  background-color: rgb(236, 128, 114);
+  color: white;
 }
 
 .btn-exit{
@@ -150,4 +174,26 @@ input[type=submit]:hover {
 
 .title-home-post{
   padding-top: 10px;
+}
+
+.cardProfile {
+  box-shadow: 0 8px 18px 0 rgba(0,0,0,0.2);
+  background-color: #dadada;
+  border: #040722 6px solid;
+  transition: 0.3s;
+  width: 40%;
+  border-radius: 5px;
+}
+
+.cardProfile:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.imgProfile {
+  border-radius: 5px 5px 0 0;
+  width:20%;
+}
+
+.containerProfile {
+  padding: 2px 16px;
 }

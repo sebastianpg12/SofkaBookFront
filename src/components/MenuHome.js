@@ -32,9 +32,10 @@ export default function MenuHome() {
                     </ul>
                   
                     <div className="nav-item">
+                        
                         <kbd className="name"> {user?.displayName} </kbd> 
-                      
-                        <img alt="perfil" className="photoProfile" src={user?.photoURL} />
+                        <Link to="/Profile"><img alt="perfil" className="photoProfile" src={user?.photoURL} /></Link>
+                        
                     </div>
 
                     <li className="nav-item d-flex">

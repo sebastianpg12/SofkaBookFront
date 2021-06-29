@@ -6,6 +6,8 @@ import Home from "./pages/Home"
 import Post from "./pages/Post"
 import EditarPost from "./pages/EditarPost"
 import Profile from "./pages/Profile"
+import Category from "./pages/Category"
+
 
 export default function Router() {
     return (
@@ -15,6 +17,7 @@ export default function Router() {
                 <Route exact path="/" component={Home}/>
                 <Route path="/CreatePost" component={CreatePost}/>
                 <Route path="/Profile" component={Profile}/>
+                <Route path="/Category" component={Category}/>
                 <Route path="/Login" component={Login}/>
                 <Route path="/EditarPost" component={EditarPost}/>
                 <Route path="/:id" component={Post}/>

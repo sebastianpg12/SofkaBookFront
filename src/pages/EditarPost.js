@@ -26,7 +26,7 @@ function EditarPost() {
 
   const editar = () => {
     fetch(
-      `http://localhost:8080/api/actualizar/${post?.id}/${user.uid}/${post?.idTitulo}/${descripcion}/${titulo}/${getCurrentDate()}`,
+      `http://localhost:8080/api/actualizar/${post?.id}/${user.uid}/${post?.idTitulo}/${descripcion}/${titulo}/${getCurrentDate()}/${user.displayName}`,
       { method: "PUT" }
     )
       .then((response) => response.json())
