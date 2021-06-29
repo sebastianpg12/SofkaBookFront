@@ -109,6 +109,13 @@ input[type=submit]:hover {
 .kbd{
   background-color: #040722;
 }
+
+.backgroundCard{
+  background-color: #313663;
+}
+.tag{
+  color: #313663;
+}
 .textAreaComment{
   margin: auto;
   width:70%;
