@@ -2,13 +2,20 @@ import React, { useState, useEffect } from "react";
 import { auth, signOut } from "../fuctions/firebaseFuctions";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useHistory, Link } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
 import { getCurrentDate } from "../fuctions/util";
 import MenuHome from "../components/MenuHome";
 import { getFromLocal } from "../fuctions/localstorage";
 import "../App.css";
+import swal from "sweetalert";
 
 function EditarPost() {
+  const postActualizado = () => {
+    swal({
+      title: "Post Actualizado",
+      icon: "success",
+      timer: "35000",
+    });
+  };
   const history = useHistory();
   const [user] = useAuthState(auth);
 
@@ -97,7 +104,8 @@ function EditarPost() {
               )}
             </div>
             {post?.idUsuario === user?.uid ? (
-              <input type="submit" value="Guardar" onClick={editar} />
+              <input type="submit" value="Guardar" onClick={editar}
+               />
             ) : (
               <input type="submit" value="Guardar" disabled />
             )}

@@ -4,18 +4,16 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useHistory, Link } from "react-router-dom";
 import { saveToLocal } from "../fuctions/localstorage";
 import MenuHome from "../components/MenuHome";
-import swal from "sweetalert"
-
+import swal from "sweetalert";
 
 export default function Home() {
-
-  const postBorrado= () => {
+  const postBorrado = () => {
     swal({
       title: "Post Eliminado",
       icon: "success",
-      timer: "35000"
+      timer: "35000",
     });
-  }
+  };
   const [arrayPosts, setArrayPosts] = React.useState([]);
 
   React.useEffect(() => {
@@ -99,14 +97,12 @@ export default function Home() {
                           method: "DELETE",
                         }).then((response) => {
                           if (response.status === 200) {
-                            postBorrado()
-                            
-                            setTimeout('document.location.reload()',1000);
+                            postBorrado();
+
+                            setTimeout("document.location.reload()", 1000);
                           }
                         });
                       }}
-
-                      
                     >
                       Borrar
                     </button>
