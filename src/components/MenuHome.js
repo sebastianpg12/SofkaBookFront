@@ -8,11 +8,7 @@ import "../App.css";
 export default function MenuHome() {
   const history = useHistory();
   const [user] = useAuthState(auth);
-  useEffect(() => {
-    if (!user) {
-      history.push("/Login");
-    }
-  }, [user, history]);
+ 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark navPrincipal">
       <div className="container-fluid">

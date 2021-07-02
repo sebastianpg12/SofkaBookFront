@@ -1,20 +1,16 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-
-
 }
 
 * {
   box-sizing: border-box;
 }
 
-
- .container {
-  
+.container {
   border-radius: 9px;
   background-color: #a4a4a5;
   padding: 20px 0 30px 0;
- border-radius: 9px;
+  border-radius: 9px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -23,11 +19,11 @@ body {
   width: 80%;
   padding: 20px;
   text-align: center;
-} 
-.sofkabook_title{
-color: rgb(255, 255, 255);
-font-weight: bold;
-margin: 2%;
+}
+.sofkabook_title {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  margin: 2%;
 }
 input,
 .btns {
@@ -40,10 +36,10 @@ input,
   display: inline-block;
   font-size: 17px;
   line-height: 20px;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
-.selectCategory{
+.selectCategory {
   margin: 8px;
 }
 input:hover,
@@ -51,140 +47,180 @@ input:hover,
   opacity: 1;
 }
 
-input[type=submit] {
-
+input[type="submit"] {
   background-color: #ffffff;
   color: #242222;
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+input[type="submit"]:hover {
   background-color: #ccd3f8;
 }
 
-.navPrincipal{
-  background-color:#050A30;
+.navPrincipal {
+  background-color: #050a30;
 }
 
-.card{width: 500px;
-  
+.card {
+  width: 500px;
+
   margin: 0 auto; /* Added */
   float: none; /* Added */
   margin-top: 40px; /* Added */
   background-color: #dadada;
   text-align: center;
-  
 }
 
-.desafioContigo{
+.desafioContigo {
   color: rgb(255, 94, 0);
 }
 
-.btnGoogle{
+.btnGoogle {
   margin: 0 auto; /* Added */
   float: none; /* Added */
   text-align: center;
-  width:55%;
+  width: 55%;
   margin-bottom: 18px; /* Added */
-  background-color: #050A30;
+  background-color: #050a30;
 }
 
-
-.btnGoogle:hover{
-  
+.btnGoogle:hover {
   background-color: #040722;
 }
 
-.tituloComentarios{
-  margin-top:18px;
-  margin-bottom:-30px;
+.tituloComentarios {
+  margin-top: 18px;
+  margin-bottom: -30px;
   text-align: center;
-  font-size:1.5em;
- 
+  font-size: 1.5em;
 }
 
-.buttonComentario{
+.buttonComentario {
   margin-bottom: 16px;
 }
-.kbd{
+.kbd {
   background-color: #040722;
 }
 
-.backgroundCard{
+.backgroundCard {
   background-color: #313663;
 }
-.tag{
+.tag {
   color: #313663;
 }
-.textAreaComment{
+
+#global {
+  height: 300px;
+  width: 200px;
+  border: 1px solid #ddd;
+  background: #f1f1f1;
+  overflow-y: scroll;
+}
+#mensajes {
+  height: auto;
+}
+.texto {
+  padding: 4px;
+  background: #fff;
+}
+
+.cardCrearGrupo {
+  width: 160px;
+  padding: 10px;
+}
+
+.inputTituloGrupo {
+  width: 130px;
+}
+
+.buttonGrupo {
+  width: 85px;
+  background-color: #040722;
+  color: #fff;
   margin: auto;
-  width:70%;
+}
+
+.text-chat{
+  text-align: center;
+  width: 190px;
+}
+
+.card-header{
+  padding: 1px;
+}
+.cardsGrupos{
+  width:85px;
+}
+
+.textAreaComment {
+  margin: auto;
+  width: 70%;
   margin-bottom: 12px;
   margin-top: 12px;
 }
-.cardComments{
-  width:50%;
+.cardComments {
+  width: 50%;
 }
-.cardPostIndividual{
-  width:75%;
+.cardPostIndividual {
+  width: 75%;
 }
-.photoProfile{
-   width:50px;
-   height:50px;
-   border-radius:50px;
-   margin-right: 15px;
+.photoProfile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-right: 15px;
 }
 
-.cardsPosts{
-  width: 28rem; 
+.cardsPosts {
+  width: 28rem;
 }
-.buttons{
-  padding: 0 0 0 0 ;
+.buttons {
+  padding: 0 0 0 0;
   width: 90px;
   height: 40px;
   font-size: 15px;
 }
 
-.buttonEdit{
+.buttonEdit {
   background-color: rgb(120, 174, 211);
   color: white;
 }
-.select{
+.select {
   margin: 14px;
   width: 130px;
 }
 
-.buttonEdit:hover{
+.buttonEdit:hover {
   background-color: rgb(109, 157, 189);
   color: white;
 }
 
-.buttonDelete{
+.buttonDelete {
   background-color: rgb(247, 127, 111);
   color: white;
 }
 
-.buttonDelete:hover{
+.buttonDelete:hover {
   background-color: rgb(236, 128, 114);
   color: white;
 }
 
-.btn-exit{
-  width:50px;
+.btn-exit {
+  width: 50px;
 }
 
-.name{
+.name {
   margin-right: 14px;
   background-color: rgb(32, 32, 32);
   color: rgb(255, 255, 255);
 }
 
-.title-home-post{
+.title-home-post {
   padding-top: 10px;
 }
 
 .cardProfile {
-  box-shadow: 0 8px 18px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 18px 0 rgba(0, 0, 0, 0.2);
   background-color: #dadada;
   border: #040722 6px solid;
   transition: 0.3s;
@@ -193,12 +229,12 @@ input[type=submit]:hover {
 }
 
 .cardProfile:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .imgProfile {
   border-radius: 5px 5px 0 0;
-  width:20%;
+  width: 20%;
 }
 
 .containerProfile {

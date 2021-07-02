@@ -37,7 +37,7 @@ function App() {
     minute: "numeric",
   };
 
-  console.log(fecha.toLocaleDateString("es-ES", options));
+  
 
   const save = () => {
     fetch(

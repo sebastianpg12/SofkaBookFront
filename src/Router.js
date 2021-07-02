@@ -8,6 +8,7 @@ import EditarPost from "./pages/EditarPost";
 import Profile from "./pages/Profile";
 import Category from "./pages/Category";
 import Chat from "./pages/Chat";
+import ChatOpen from "./pages/ChatOpen";
 export default function Router() {
   return (
     <BrowserRouter>
@@ -15,6 +16,7 @@ export default function Router() {
         <Route exact path="/" component={Home} />
         <Route path="/CreatePost" component={CreatePost} />
         <Route path="/Profile" component={Profile} />
+        <Route path="/ChatOpen/:id" component={ChatOpen} />
         <Route path="/Chat" component={Chat} />
         <Route path="/Category" component={Category} />
         <Route path="/Login" component={Login} />
