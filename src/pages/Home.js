@@ -15,6 +15,8 @@ export default function Home() {
     });
   };
   const [arrayPosts, setArrayPosts] = React.useState([]);
+  const [postId, setPostId] = useState("");
+  const [likes, setLikes] = useState([]);
 
   React.useEffect(() => {
     console.log("");
@@ -22,11 +24,14 @@ export default function Home() {
   }, []);
 
   const obtenerDatos = async () => {
-    const data = await fetch("http://localhost:8080/api/findPosts");
+    const data = await fetch(
+      "https://sofkabookbackend.herokuapp.com/api/findPosts"
+    );
     const posts = await data.json();
 
     setArrayPosts(posts);
   };
+
   const history = useHistory();
   const [user] = useAuthState(auth);
   useEffect(() => {
@@ -34,51 +39,67 @@ export default function Home() {
       history.push("/Login");
     }
   }, [user, history]);
+  
   return (
-    <div>
+    <div className="fontGlobal">
       <MenuHome />
+      <div className="container-fluid-right backgroundArrow ">
+        <div className="">
 
-      <Link className="filtrar" to={`/Category`}>
-        <button type="button " className="buttons btns btn-dark">
-          Filtrar
-        </button>
-      </Link>
-
+        <Link className="" to={`/Category`}>
+          <button type="button  " className="buttons btns filtrar ">
+            Filtrar
+          </button>
+        </Link>
+        <Link className="" to={`/MyPosts`}>
+          <button type="button  " className="buttons btns filtrar">
+            Mis Posts
+          </button>
+        </Link>
+        </div>
+        
+      </div>
       <div class="container-xxl">
+        <br></br>
+        <h1 className="container-fluid text-center">Inicio</h1>
+        <div class="alert alert-primary container-xl text-center" role="alert">
+        <b>{user?.displayName}</b>, Bienvenido al inicio aqui podras ver todos los posts que se publicando a diario y si le das en leer más, podras vizualizar su descripcion, reaccionar y comentar los post.
+        </div>
         <div class="row">
           {arrayPosts.map((item) => (
-            <div key={item.id} class="col-6 text-center">
+            <div key={item.id} class="col text-center">
               <div class="card cardsPosts">
-                <i class="bi bi-tags tag">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-tags"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z" />
-                    <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z" />
-                  </svg>
-                </i>
-                <small className="tag">{item.categoria}</small>
-                <div class="card-header">
-                  <h4 class="card-title">{item.titulo}</h4>
+                <div class="card-header p-3">
+                  <i class="bi bi-tags tag">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-tags "
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z" />
+                      <path d="M5.5 5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z" />
+                    </svg>
+                  </i>
+                  <small className="tag ">{item.categoria}</small>
+                  <h4 class="card-title p-1 fontGlobal">{item.titulo}</h4>
+                  <div></div>
+
                   <h6>
                     <kbd className="kbd">{item.name}</kbd>
                   </h6>
-                  <sub>
+                  
                     <small>{item.fecha}</small>
-                  </sub>
+                 
                 </div>
                 <div class="card-body">
-                  <p class="card-text">{item.descripcion} </p>
                   <Link to={`/EditarPost`}>
                     {item.idUsuario === user?.uid ? (
                       <button
                         type="button"
-                        className="buttons btns buttonEdit"
+                        className=" btnActualizar"
                         onClick={() => {
                           saveToLocal("idPost", item.id);
                         }}
@@ -91,11 +112,14 @@ export default function Home() {
                   {item.idUsuario === user?.uid ? (
                     <button
                       type="button"
-                      className="buttons btns buttonDelete "
+                      className=" btnDelete "
                       onClick={() => {
-                        fetch(`http://localhost:8080/api/delete/${item.id}`, {
-                          method: "DELETE",
-                        }).then((response) => {
+                        fetch(
+                          `https://sofkabookbackend.herokuapp.com/api/delete/${item.id}`,
+                          {
+                            method: "DELETE",
+                          }
+                        ).then((response) => {
                           if (response.status === 200) {
                             postBorrado();
 
@@ -109,16 +133,21 @@ export default function Home() {
                   ) : null}
 
                   <Link to={`/${item.id}`}>
-                    <button type="button" className="buttons btns btn-dark">
-                      Abrir Post
+                    <button type="button" className="btnLeerMás">
+                      Leer Más
                     </button>
                   </Link>
+
+                  
                 </div>
               </div>
             </div>
           ))}
+
+         
         </div>
       </div>
+      <br /> <br />
     </div>
   );
 }

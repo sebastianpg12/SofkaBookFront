@@ -3,6 +3,7 @@ import { auth, signOut } from "../fuctions/firebaseFuctions";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useHistory, Link, useParams } from "react-router-dom";
 import MenuHome from "../components/MenuHome";
+import Menu from "../components/Menu";
 
 
 export default function Profile() {
@@ -10,14 +11,22 @@ export default function Profile() {
     const [user] = useAuthState(auth);
 
   return (
-    <div>
-      <MenuHome />
-        <div className="cardProfile container">
+    <div className="fontGlobal">
+      <Menu />
+        <div className="cardProfile container-flex">
         <img className="imgProfile" src={user?.photoURL} alt="Avatar"/>
         <div class="containerProfile">
             <br/>
-            <p><b>Sofkian@:</b>{user?.displayName}</p> 
-            <p><b>Correo:</b>{user?.email}</p>     
+            <b>Sofkian@</b>
+            <br/>
+            <small>{user?.displayName}</small> 
+            <br/>
+            <b>Correo</b>
+            <br/>
+            <small>{user?.email}</small>     
+            <br/>
+            <br/>
+          
         </div>
         </div>
       </div>

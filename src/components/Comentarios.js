@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 export default function Comentarios({comentario}) {
     const [user] = useAuthState(auth);
   return (
-    <div className="">
+    <div className="fontGlobal">
       <div class="card cardComments">
         <div class="card-header"> <h5 class="card-title">{comentario.name}</h5></div>
         <div class="card-body">
@@ -15,7 +15,7 @@ export default function Comentarios({comentario}) {
           {comentario.idUsuario === user?.uid ? (
                     <button type="button" className="buttons btn btn-dark"
                       onClick={() => {
-                        fetch(`http://localhost:8080/apiComment/delete/${comentario.id}`, {
+                        fetch(`https://sofkabookbackend.herokuapp.com/apiComment/delete/${comentario.id}`, {
                           method: "DELETE",
                         }).then((response) => {
                           if (response.status === 200) {

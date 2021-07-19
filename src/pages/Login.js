@@ -20,24 +20,28 @@ export default function Login() {
     }, [user, history])
 
     return (
-        <div className="containerLogin">
+        <div className="fontGlobal">
             <MenuLogin/>
         
+<div className="container-fluid">
+<div class="row">
+<div className="card">
 
-            <div className="card">
+<div className="card-body">
+    <div className="card-title"><img  src={SofkaBook} /></div>
+    <br />
+    <p className="card-text">Estamos construyendo la mejor experiencia social para ti, esperamos disfrutes de las distintas utilidades.
+        <br /><br />
+    </p>
 
-                <div className="card-body">
-                    <div className="card-title"><img  src={SofkaBook} /></div>
-                    <br />
-                    <p className="card-text">Estamos construyendo la mejor experiencia social para ti, esperamos disfrutes de las distintas utilidades.
-                        <br /><br />
-                    </p>
+    <p className="desafioContigo"><strong>#ElDesafíoEsContigo</strong></p>
 
-                    <p className="desafioContigo"><strong>#ElDesafíoEsContigo</strong></p>
-
-                </div>
-                <button className="btnGoogle btn btn-primary" onClick={signingWithGoogle} ><img src="https://cdn.icon-icons.com/icons2/836/PNG/512/Google_icon-icons.com_66793.png" width="17px" height="15px"/> Ingresar con Google </button>
-            </div>
+</div>
+<button className="btnGoogle btn btn-primary" onClick={signingWithGoogle} ><img src="https://cdn.icon-icons.com/icons2/836/PNG/512/Google_icon-icons.com_66793.png" width="17px" height="15px"/> Ingresar con Google </button>
+</div>
+    </div>
+          
+</div>
 
 
 
