@@ -15,7 +15,7 @@ export default function Comentarios({comentario}) {
           {comentario.idUsuario === user?.uid ? (
                     <button type="button" className="buttons btn btn-dark"
                       onClick={() => {
-                        fetch(`https://sofkabookbackend.herokuapp.com/apiComment/delete/${comentario.id}`, {
+                        fetch(`https://taicbook.herokuapp.com//apiComment/delete/${comentario.id}`, {
                           method: "DELETE",
                         }).then((response) => {
                           if (response.status === 200) {

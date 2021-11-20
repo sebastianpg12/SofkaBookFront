@@ -42,29 +42,29 @@ input,
 .btnLeerMás {
    -webkit-border-radius: 0;
    -moz-border-radius: 0;
-   border-radius: 0;
+   border-radius: 5px;
    color: #FFFFFF;
    font-family: Arial;
    font-size: 12px;
    font-weight: 100;
    padding: 13px;
-   background: #455774;
+   background: #768777;
    border: none;
- 
+   margin: 3px;
 }
 
 
 .btnDelete {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
-  border-radius: 0;
+  border-radius: 5px;
   color: #FFFFFF;
   font-family: Arial;
   font-size: 12px;
   font-weight: 100;
   padding: 13px;
-
-  background-color: rgb(247, 127, 111);
+  margin: 3px;
+  background-color: rgb(202, 156, 156);
   border: none;
 
 }
@@ -85,14 +85,14 @@ input,
 .btnActualizar {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
-  border-radius: 0;
+  border-radius: 5px;
   color: #FFFFFF;
   font-family: Arial;
   font-size: 12px;
   font-weight: 100;
   padding: 13px;
-  background-color: rgb(109, 157, 189);
-
+  background-color: rgb(159, 178, 185);
+  margin: 3px;
   border: none;
 
 }
@@ -118,7 +118,7 @@ input[type="submit"]:hover {
 }
 
 .navPrincipal {
-  background-color: #050a30;
+  background-color:#79B07C;
   width: 100%;
 }
 
@@ -132,8 +132,12 @@ input[type="submit"]:hover {
   margin: 0 auto; /* Added */
   float: none; /* Added */
   margin-top: 40px; /* Added */
-  background-color: #dadada;
+  background-color: #eceeea;
   text-align: center;
+}
+
+.nav-link{
+  color: #ffffff;
 }
 
 .desafioContigo {
@@ -164,7 +168,7 @@ input[type="submit"]:hover {
   margin-bottom: 16px;
 }
 .kbd {
-  background-color: #040722;
+  background-color: #768777;
 }
 
 .backgroundCard {
@@ -378,12 +382,14 @@ width: 100%;
 }
 
 .backgroundArrow{
-  background-color: #313663;
+  background-color: #bcf3bf;
  
  
 }
 
-
+.alert{
+  background-color:#bcf3bf;
+}
 .filtrar {
   
    border-radius: 10px;
@@ -415,7 +421,7 @@ width: 100%;
 .formularioCrearPost{
   
   margin-top: auto;
-  background-color: #313663;
+  background-color: #bcf3bf;
   padding: 28px;
   -webkit-box-shadow: 0px 1px 13px 5px rgba(0,0,0,0.75); 
   box-shadow: 0px 1px 13px 5px rgba(0,0,0,0.75);
@@ -490,10 +496,18 @@ width: 100%;
 
 .name {
   margin-right: 14px;
-  background-color: rgb(32, 32, 32);
-  color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.726);
+  color: rgb(77, 76, 76);
 }
 
+.btn-exit {
+  color: white;
+ border-color: white;
+}
+
+.btn{
+  color: white;
+}
 .title-home-post {
   padding-top: 10px;
 }

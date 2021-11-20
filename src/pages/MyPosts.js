@@ -22,7 +22,7 @@ export default function MyPosts() {
 
     const obtenerDatos = async () => {
       const data = await fetch(
-        `https://sofkabookbackend.herokuapp.com/api/findByIdUsuario/${user.uid}`
+        `https://taicbook.herokuapp.com/api/findByIdUsuario/${user.uid}`
       );
       const posts = await data.json();
   
@@ -59,7 +59,7 @@ export default function MyPosts() {
     </div>
     <div class="container-fluid">
     <h1 className="container-fluid text-center margin">Mis posts</h1>
-    <div class="alert alert-primary container-xl text-center" role="alert">
+    <div class="alert container-xl text-center" role="alert">
     <b>{user?.displayName}</b>, Aqui puedes estar al tanto de tus post
         </div>
       <div class="row">
@@ -112,7 +112,7 @@ export default function MyPosts() {
                     className=" btnDelete "
                     onClick={() => {
                       fetch(
-                        `https://sofkabookbackend.herokuapp.com/api/delete/${item.id}`,
+                        `https://taicbook.herokuapp.com/api/delete/${item.id}`,
                         {
                           method: "DELETE",
                         }

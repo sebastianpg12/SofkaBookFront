@@ -25,7 +25,7 @@ export default function Profile() {
 
   const obtenerCategoria = async () => {
     const data = await fetch(
-      `https://sofkabookbackend.herokuapp.com/api/findByCategory/${busqueda}`
+      `https://taicbook.herokuapp.com/api/findByCategory/${busqueda}`
     );
     const categorias = await data.json();
     setCategoria(categorias);
@@ -41,7 +41,7 @@ export default function Profile() {
      
   <div class="container-xxl ">
   <h1 className="container-fluid text-center margin ">Categorias</h1>
-  <div class="alert alert-primary container-xl text-center" role="alert">
+  <div class="alert container-xl text-center" role="alert">
   <b>{user?.displayName}</b>, Esta es la seccion de categorias utiliza el selector para buscar una en espeficico
         </div>
   <div class="form-group select">
@@ -114,7 +114,7 @@ export default function Profile() {
                       className=" btnDelete "
                       onClick={() => {
                         fetch(
-                          `https://sofkabookbackend.herokuapp.com/api/delete/${item.id}`,
+                          `https://taicbook.herokuapp.com/api/delete/${item.id}`,
                           {
                             method: "DELETE",
                           }

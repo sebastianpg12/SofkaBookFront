@@ -27,7 +27,7 @@ export default function Post() {
 
   const obtenerComentarios = async () => {
     const data = await fetch(
-      `https://sofkabookbackend.herokuapp.com/api/findComments/${id}`
+      `https://taicbook.herokuapp.com/api/findComments/${id}`
     );
     const comentarios = await data.json();
     setComentarios(comentarios);
@@ -35,7 +35,7 @@ export default function Post() {
 
   const obtenerLike = async () => {
     const data = await fetch(
-      `https://sofkabookbackend.herokuapp.com/apiLike/findByPostId/${id}`
+      `https://taicbook.herokuapp.com/apiLike/findByPostId/${id}`
     );
     const like = await data.json();
     setLikes(like);
@@ -44,7 +44,7 @@ export default function Post() {
   useEffect(() => {
     const obtenerDatos = async () => {
       const data = await fetch(
-        `https://sofkabookbackend.herokuapp.com/api/findPosts/${id}`
+        `https://taicbook.herokuapp.com/api/findPosts/${id}`
       );
       const posts = await data.json();
       setPost(posts);
@@ -83,7 +83,7 @@ export default function Post() {
                   onClick={() => {
                     if (!like.find((item) => item.idUsuario === user?.uid)) {
                       fetch(
-                        `https://sofkabookbackend.herokuapp.com/apiLike/${uuidv4()}/${
+                        `https://taicbook.herokuapp.com/apiLike/${uuidv4()}/${
                           user?.uid
                         }/${id}`,
                         {

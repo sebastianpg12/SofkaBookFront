@@ -21,7 +21,7 @@ function Chat() {
 
   const ObtenerGrupos = async () => {
     const data = await fetch(
-      "https://sofkabookbackend.herokuapp.com/apiGrupo/buscarGrupos"
+      "https://taicbook.herokuapp.com/apiGrupo/buscarGrupos"
     );
     const grupos = await data.json();
     setGrupos(grupos);
@@ -38,7 +38,7 @@ function Chat() {
 
   const CrearGrupo = () => {
     fetch(
-      `https://sofkabookbackend.herokuapp.com/apiGrupo/${uuidv4()}/${titulo}/${fecha.toLocaleDateString(
+      `https://taicbook.herokuapp.com/apiGrupo/${uuidv4()}/${titulo}/${fecha.toLocaleDateString(
         "es-ES",
         options
       )}/${user.displayName}`,
@@ -56,7 +56,7 @@ function Chat() {
 
       <div class="container-fluid">
         <h1 className="container-fluid text-center margin">SofkaGrupos</h1>
-        <div class="alert alert-primary container-xl text-center" role="alert">
+        <div class="alert container-xl text-center" role="alert">
         <b>{user?.displayName}</b>, Bienvenido a los sofkaGrupos aqui podras interactuar en los distintos
           grupos, podras resolver dudas, encontrar sugerencias y novedades o si no hay un grupo del tema del que quieres
           hablar <b>¡crealo!</b>

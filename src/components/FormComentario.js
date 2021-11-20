@@ -11,7 +11,7 @@ export default function FormComentario() {
 
     const [user] = useAuthState(auth);
     const saveComment = () => {
-        fetch(`https://sofkabookbackend.herokuapp.com/apiComment/${uuidv4()}/${comentario}/${getCurrentDate()}/${id}/${user?.uid}/${user?.displayName}`, { method: 'POST' })
+        fetch(`https://taicbook.herokuapp.com//apiComment/${uuidv4()}/${comentario}/${getCurrentDate()}/${id}/${user?.uid}/${user?.displayName}`, { method: 'POST' })
           .then(response => response.json())
           .then(data => console.log(data));
       }    

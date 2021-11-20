@@ -25,7 +25,7 @@ function EditarPost() {
   const [titulo, setTitulo] = useState("");
 
   const obtenerDatos = async (id) => {
-    const data = await fetch(`https://sofkabookbackend.herokuapp.com/api/findPosts/${id}`);
+    const data = await fetch(`https://taicbook.herokuapp.com/api/findPosts/${id}`);
     const post = await data.json();
     setPost(post);
     setDescripcion(post.descripcion)
@@ -34,7 +34,7 @@ function EditarPost() {
 
   const editar = () => {
     fetch(
-      `https://sofkabookbackend.herokuapp.com/api/actualizar/${post?.id}/${user?.uid}/${categoria}/${descripcion}/${titulo}/${getCurrentDate()}/${user?.displayName}`,
+      `https://taicbook.herokuapp.com/api/actualizar/${post?.id}/${user?.uid}/${categoria}/${descripcion}/${titulo}/${getCurrentDate()}/${user?.displayName}`,
       { method: "PUT" }
     )
       .then((response) => response.json())

@@ -30,7 +30,7 @@ function ChatOpen() {
 
   const ObtenerGrupos = async () => {
     const data = await fetch(
-      "https://sofkabookbackend.herokuapp.com/apiGrupo/buscarGrupos"
+      "https://taicbook.herokuapp.com/apiGrupo/buscarGrupos"
     );
     const grupos = await data.json();
     setGrupos(grupos);
@@ -38,7 +38,7 @@ function ChatOpen() {
 
   const ObtenerChats = async (idGrupo) => {
     const data = await fetch(
-      `https://sofkabookbackend.herokuapp.com/apiMensajes/findByIdGrupo/${idGrupo}`
+      `https://taicbook.herokuapp.com/apiMensajes/findByIdGrupo/${idGrupo}`
     );
     const chats = await data.json();
     console.log(chats);
@@ -56,7 +56,7 @@ function ChatOpen() {
 
   const CrearMensaje = () => {
     fetch(
-      `https://sofkabookbackend.herokuapp.com/apiMensajes/${uuidv4()}/${mensajeChat}/${fecha.toLocaleDateString(
+      `https://taicbook.herokuapp.com/apiMensajes/${uuidv4()}/${mensajeChat}/${fecha.toLocaleDateString(
         "es-ES",
         options
       )}/${user.displayName}/${id}`,
@@ -91,7 +91,7 @@ function ChatOpen() {
                       className="cursor-pointer"
                       onClick={() => {
                         fetch(
-                          `https://sofkabookbackend.herokuapp.com/apiMensajes/deleteMensaje/${mensaje.id}`,
+                          `https://taicbook.herokuapp.com/apiMensajes/deleteMensaje/${mensaje.id}`,
                           {
                             method: "DELETE",
                           }
@@ -153,7 +153,7 @@ function ChatOpen() {
             </div>
           </div>
           <br/>
-          <div class="alert alert-primary container-xl text-center" role="alert">
+          <div class="alertcontainer-xl text-center" role="alert">
           <b>{user?.displayName}</b>, Estas dentro de un sofkaChat, el cual pertenece al sofkaGrupo que seleccionaste, dependiendo del grupo puedes interactuar y opinar sobre los temas
          respectivos en la zona de texto que tienes justo arriba. <b>¡disfruta!</b>
         </div>

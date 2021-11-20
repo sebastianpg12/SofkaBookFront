@@ -25,7 +25,7 @@ export default function Home() {
 
   const obtenerDatos = async () => {
     const data = await fetch(
-      "https://sofkabookbackend.herokuapp.com/api/findPosts"
+      "https://taicbook.herokuapp.com/api/findPosts"
     );
     const posts = await data.json();
 
@@ -62,7 +62,7 @@ export default function Home() {
       <div class="container-xxl">
         <br></br>
         <h1 className="container-fluid text-center">Inicio</h1>
-        <div class="alert alert-primary container-xl text-center" role="alert">
+        <div class="alert container-xl text-center" role="alert">
         <b>{user?.displayName}</b>, Bienvenido al inicio aqui podras ver todos los posts que se publicando a diario y si le das en leer más, podras vizualizar su descripcion, reaccionar y comentar los post.
         </div>
         <div class="row">
@@ -115,7 +115,7 @@ export default function Home() {
                       className=" btnDelete "
                       onClick={() => {
                         fetch(
-                          `https://sofkabookbackend.herokuapp.com/api/delete/${item.id}`,
+                          `https://taicbook.herokuapp.com/api/delete/${item.id}`,
                           {
                             method: "DELETE",
                           }
