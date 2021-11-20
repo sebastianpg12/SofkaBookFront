@@ -15,6 +15,7 @@ export default function Menu() {
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <img src={Logo} width="75" height="60"/>
+          
         </Link>
         <button
           className="navbar-toggler"
