@@ -85,7 +85,8 @@ export default function Home() {
                   </i>
                   <small className="tag ">{item.categoria}</small>
                   <h4 class="card-title p-1 fontGlobal">{item.titulo}</h4>
-                  <div></div>
+              
+              
 
                   <h6>
                     <kbd className="kbd">{item.name}</kbd>

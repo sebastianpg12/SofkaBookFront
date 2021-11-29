@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { auth, signOut } from "../fuctions/firebaseFuctions";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useHistory, Link } from "react-router-dom";
-import Logo from "./a.gif";
+import Logo from "./logo.png";
 import "../App.css";
 
 export default function Menu() {
@@ -14,8 +14,8 @@ export default function Menu() {
       <nav className="navbar navbar-expand-lg navbar-dark navPrincipal">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          <img src={Logo} width="75" height="60"/>
-          
+          <img src={Logo}/>
+
         </Link>
         <button
           className="navbar-toggler"
@@ -42,7 +42,7 @@ export default function Menu() {
             </li>
             <li className="nav-item">
               <Link to="/Chat" className="nav-link" href="#">
-                SofkaGrupos
+                Grupos
               </Link>
             </li>
           </ul>

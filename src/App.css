@@ -21,7 +21,7 @@ body {
   text-align: center;
 }
 .sofkabook_title {
-  color: rgb(255, 255, 255);
+  color: #92bb95;
   font-weight: bold;
   margin: 2%;
 }
@@ -68,6 +68,7 @@ input,
   border: none;
 
 }
+
 
 .fontGlobal {
   font-family: 'Assistant', sans-serif;
@@ -140,9 +141,6 @@ input[type="submit"]:hover {
   color: #ffffff;
 }
 
-.desafioContigo {
-  color: rgb(255, 94, 0);
-}
 
 .btnGoogle {
   margin: 0 auto; /* Added */
@@ -150,7 +148,8 @@ input[type="submit"]:hover {
   text-align: center;
   width: 55%;
   margin-bottom: 18px; /* Added */
-  background-color: #050a30;
+  background-color: #ffffff;
+  color: #000;
 }
 
 .btnGoogle:hover {
@@ -182,8 +181,8 @@ input[type="submit"]:hover {
   margin-top:18px;
   height: 420px;
   width: 100%;
-
- background-image: url(SOFKACHAT.png);
+  background: rgb(213,212,226);
+  background: linear-gradient(90deg, rgba(213,212,226,1) 0%, rgba(154, 209, 149, 0.877) 54%, rgba(213,212,226,1) 100%);
   overflow-y: scroll;
 
   background-repeat: no-repeat;
@@ -215,7 +214,7 @@ input[type="submit"]:hover {
 .buttonGrupo {
   border-radius: 7px;
   width: 85px;
-  background-color: #040722;
+  background-color: #6cad9f;
   color: #fff;
   margin: auto;
   margin-bottom: 2px;
@@ -224,7 +223,7 @@ input[type="submit"]:hover {
 .buttonGrupo:hover {
   border-radius: 7px;
   width: 85px;
-  background-color: #070d3b;
+  background-color: #538d81;
   color: #fff;
   margin: auto;
   margin-bottom: 2px;
@@ -234,13 +233,17 @@ input[type="submit"]:hover {
   margin-top: 5px;
   border-radius: 7px;
   width: 85px;
-  background-color: #040722;
+  background-color: #47946b;
   color: #fff;
-
-
 }
-
-
+.card-login{
+  background-color: rgba(173, 173, 173, 0.835);
+  color: white;
+}
+.coloricons{
+  margin: 2px;
+  color: #040722;
+}
 .buttonEnviarChat:hover {
   margin-top: 5px;
   border-radius: 7px;
@@ -298,7 +301,7 @@ width: 100%;
 .buttonGrupoEnter{
   border-radius: 7px;
   width: 40px;
-  background-color: #040722;
+  background-color: #6cad9f;
   color: #fff;
   margin: auto;
   margin-bottom: 7px;
@@ -308,7 +311,7 @@ width: 100%;
 .buttonGrupoEnter:hover{
   border-radius: 7px;
   width: 40px;
-  background-color: #060a31;
+  background-color: #538d81;
   color: #fff;
   margin: auto;
   margin-bottom: 7px;
@@ -319,7 +322,7 @@ width: 100%;
 .MensajeContainer{
   max-width: 3400px;
   background-color:rgb(255, 255, 255);
-  border:#8b96e794 solid 1px;
+  border:#1da81d63 solid 2px;
   border-radius:8px;
   text-align: left;
  padding: 1px 1px 0px 10px;
@@ -421,15 +424,12 @@ width: 100%;
 .formularioCrearPost{
   
   margin-top: auto;
-  background-color: #bcf3bf;
+  background-color: #e5ebe5;
   padding: 28px;
   -webkit-box-shadow: 0px 1px 13px 5px rgba(0,0,0,0.75); 
   box-shadow: 0px 1px 13px 5px rgba(0,0,0,0.75);
 }
 
-.buttonSave{
- 
-}
 .textAreaComment {
   margin: auto;
   width: 70%;
@@ -508,6 +508,35 @@ width: 100%;
 .btn{
   color: white;
 }
+
+
+.myButton {
+	background-color:#ffffff;
+	border-radius:5px;
+	border:1px solid #acaaa7;
+	display:inline-block;
+	cursor:pointer;
+	color:#464646;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:15px 0px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+  width: 200px;
+  margin: auto;
+  margin-bottom: 15px;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+	background-color:#ccc2a6;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+        
 .title-home-post {
   padding-top: 10px;
 }
@@ -519,7 +548,7 @@ width: 100%;
 .cardProfile {
   box-shadow: 0 8px 18px 0 rgba(0, 0, 0, 0.2);
   background-color: #dadada;
-  border: #040722 6px solid;
+  border: #407e4f 6px solid;
   transition: 0.3s;
   width: 90%;
   margin: auto;

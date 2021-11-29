@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
-import { db } from "../fuctions/firebaseInit";
-import MenuHome from "../components/MenuHome";
 import { auth, signOut } from "../fuctions/firebaseFuctions";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { v4 as uuidv4 } from "uuid";
@@ -55,9 +53,9 @@ function Chat() {
       <Menu />
 
       <div class="container-fluid">
-        <h1 className="container-fluid text-center margin">SofkaGrupos</h1>
+        <h1 className="container-fluid text-center margin">Grupos</h1>
         <div class="alert container-xl text-center" role="alert">
-        <b>{user?.displayName}</b>, Bienvenido a los sofkaGrupos aqui podras interactuar en los distintos
+        <b>{user?.displayName}</b>, Bienvenido a los Grupos aqui podras interactuar en los distintos
           grupos, podras resolver dudas, encontrar sugerencias y novedades o si no hay un grupo del tema del que quieres
           hablar <b>¡crealo!</b>
         </div>

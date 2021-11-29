@@ -123,7 +123,7 @@ function EditarPost() {
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong>Procura poner un titulo corto y contundente.</strong>  <code>Ejemplo: ¿Sabias que sofka cuenta con estos beneficios?</code>
+        <strong>Procura poner un titulo corto y contundente.</strong>  <code>Ejemplo: ¿Sabias que cuentas con estos beneficios?</code>
       </div>
     </div>
   </div>

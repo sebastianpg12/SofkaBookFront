@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import '../App.css';
 
 import MenuLogin from '../components/MenuLogin';
-import SofkaBook from '../components/sofkabook.png';
+import SofkaBook from '../components/a.png';
 
 
 export default function Login() {
@@ -25,19 +25,18 @@ export default function Login() {
         
 <div className="container-fluid">
 <div class="row">
-<div className="card">
+<div className="card card-login">
 
-<div className="card-body">
-    <div className="card-title"><img  src={SofkaBook} /></div>
+<div className="card-body ">
+    <div className="card-title"><img  width="150" height="70" src={SofkaBook} /></div>
     <br />
     <p className="card-text">Estamos construyendo la mejor experiencia social para ti, esperamos disfrutes de las distintas utilidades.
         <br /><br />
     </p>
 
-    <p className="desafioContigo"><strong>#ElDesafíoEsContigo</strong></p>
 
 </div>
-<button className="btnGoogle btn btn-primary" onClick={signingWithGoogle} ><img src="https://cdn.icon-icons.com/icons2/836/PNG/512/Google_icon-icons.com_66793.png" width="17px" height="15px"/> Ingresar con Google </button>
+<button className="myButton" onClick={signingWithGoogle} ><img src="https://cdn.icon-icons.com/icons2/836/PNG/512/Google_icon-icons.com_66793.png" width="17px" height="15px"/> Ingresar con Google </button>
 </div>
     </div>
           

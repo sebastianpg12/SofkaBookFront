@@ -149,7 +149,7 @@ function App() {
               <div class="accordion-body">
                 <strong>Procura poner un titulo corto y contundente.</strong>{" "}
                 <code>
-                  Ejemplo: ¿Sabias que sofka cuenta con estos beneficios?
+                  Ejemplo: ¿Sabias que cuenta con estos beneficios?
                 </code>
               </div>
             </div>
@@ -214,7 +214,7 @@ function App() {
           </div>
         </div>
 
-        <div className="container-fluid ">
+        {/* <div className="container-fluid ">
           <div className="card sizeCard">
                 <div className="card-header">
                 <h6>Video de ejemplo</h6>
@@ -226,7 +226,7 @@ function App() {
           </div>
          
         
-        </div>
+        </div> */}
         
 
         <br />

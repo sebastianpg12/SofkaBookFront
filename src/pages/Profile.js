@@ -17,7 +17,7 @@ export default function Profile() {
         <img className="imgProfile" src={user?.photoURL} alt="Avatar"/>
         <div class="containerProfile">
             <br/>
-            <b>Sofkian@</b>
+            <b>Persona</b>
             <br/>
             <small>{user?.displayName}</small> 
             <br/>
